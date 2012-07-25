@@ -63,6 +63,8 @@
     	<?php if(count($font_folders) > 0):?>
     	<h1><?php echo $folder_name; ?></h1>
     	<p>(<em><?php echo $folder_name; ?></em>)</p>
+    	
+    	<div>
     	<h2>Fonts Available</h2>
     	<ul>
 		<?php foreach($font_folders as $k => $font):?>
@@ -72,12 +74,20 @@
 			<li>No font folders found</li>
 		</ul>	
 		<?php endif; ?>
+		</div>
+		<div>
+		  <p>A folder called 'fonts' should be in the same directory as this file.<br />
+		  	Each font should have it's own folder within that.<br />
+		  	.ttf, .woff, .eot and .svg are all supported.
+		  	</p>
+		  	<p>Click on the font folder name on the left to change the character map to the font in that folder.</p>
+		</div>
     </header>
     <div id="main" role="main">
 		<table>
 			<tr>
 				<?php foreach($all_chars as $i => $k):?>
-					<td><?php echo $k,' = <span class="looped-font">',$k,'<span>';?></td>
+					<td><?php echo $k,' = <span class="looped-font">',$k,'</span>';?></td>
 					<?php if(($i + 1) % $column_limit == 0):?>
 			</tr>
 			<tr>
