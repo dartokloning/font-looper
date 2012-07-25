@@ -22,7 +22,15 @@
 		}
 	}
 	
-	$active_font = $dir.'/'.$_GET['font_folder'];
+	
+	if(strlen($_GET['font_folder']) > 4){
+		$active_font = $dir.'/'.$_GET['font_folder'];
+		$folder_name = $_GET['font_folder'];
+	}else{
+		$active_font = $dir.'/'.reset($font_folders);
+		$folder_name = reset($font_folders);
+	}
+	
 	
 	$scan_active = scandir($active_font);
 	$font_files = array();
@@ -49,7 +57,7 @@
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
+  <title>Font Looper</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -75,8 +83,8 @@
 		    font-style: normal;
 		
 		}
-		
-		.looped-font{
+		.looped-font,
+		h1{
 			font-family: 'LoopedFont';
 		}
   </style>
@@ -97,15 +105,17 @@
   <div id="font-looper">
     <header>
     	<?php if(count($font_folders) > 0):?>
-    		
+    	<h1><?php echo $folder_name; ?></h1>
+    	<p>(<em><?php echo $folder_name; ?></em>)</p>
+    	<h2>Fonts Available</h2>
+    	<ul>
 		<?php foreach($font_folders as $k => $font):?>
-			<a href="?font_folder=<?php echo $font;?>"><?php echo $font;?></a>
+			<li><a href="?font_folder=<?php echo $font;?>"><?php echo $font;?></a></li>
 		<?php endforeach; ?>
 		<?php else:?>
-			No font folders found
+			<li>No font folders found</li>
+		</ul>	
 		<?php endif; ?>
-		
-		<?php print_r($font_files); ?>
     </header>
     <div id="main" role="main">
 		<table>
