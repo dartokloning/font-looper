@@ -39,8 +39,7 @@
 		    font-style: normal;
 		
 		}
-		.looped-font,
-		h1{
+		.looped-font{
 			font-family: 'LoopedFont';
 		}
   </style>
@@ -59,9 +58,11 @@
 <body>
 
   <div id="font-looper">
+  	<h1 class="fl-heading">Font Looper</h1>
     <header>
+		
     	<?php if(count($font_folders) > 0):?>
-    	<h1><?php echo $folder_name; ?></h1>
+    	<h1 class="looped-font"><?php echo $folder_name; ?></h1>
     	<p>(<em><?php echo $folder_name; ?></em>)</p>
     	
     	<div>
@@ -98,7 +99,7 @@
 		</table>
     </div>
     <footer>
-
+		<a href="https://github.com/daveycakes/font-looper">Font Looper</a> is a <a href="http://calcium.ie/">Calcium</a> thing.
     </footer>
   </div> <!--! end of #container -->
 

@@ -33,7 +33,7 @@
 	}
 	
 	
-	if(strlen($_GET['font_folder']) > 4){
+	if(isset($_GET['font_folder'])){
 		$active_font = $dir.'/'.$_GET['font_folder'];
 		$folder_name = $_GET['font_folder'];
 	}else{
