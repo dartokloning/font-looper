@@ -25,6 +25,9 @@
   <!-- CSS: implied media=all -->
   <!-- CSS concatenated and minified via ant build script-->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.8.24.custom.css">
+  <link rel="stylesheet" href="css/grid.css">
   
   <!-- php generated style -->
   <style>
@@ -39,8 +42,7 @@
 		    font-style: normal;
 		
 		}
-		.looped-font,
-		h1{
+		.looped-font{
 			font-family: 'LoopedFont';
 		}
   </style>
@@ -59,33 +61,76 @@
 <body>
 
   <div id="font-looper">
-    <header>
-    	<?php if(count($font_folders) > 0):?>
-    	<h1><?php echo $folder_name; ?></h1>
-    	<p>(<em><?php echo $folder_name; ?></em>)</p>
-    	<h2>Fonts Available</h2>
-    	<ul>
-		<?php foreach($font_folders as $k => $font):?>
-			<li><a href="?font_folder=<?php echo $font;?>"><?php echo $font;?></a></li>
-		<?php endforeach; ?>
-		<?php else:?>
-			<li>No font folders found</li>
-		</ul>	
-		<?php endif; ?>
+    <header class="container_16">
+		<div class="grid_8">
+			<h1>Font Looper</h1>
+		</div>
+		<div class="grid_8">
+			<h2>by <span>Ca</span>lcium</h2>
+		</div>
     </header>
-    <div id="main" role="main">
-		<table>
-			<tr>
-				<?php foreach($all_chars as $i => $k):?>
-					<td><?php echo $k,' = <span class="looped-font">',$k,'<span>';?></td>
-					<?php if(($i + 1) % $column_limit == 0):?>
-			</tr>
-			<tr>
+    <div id="main" role="main" class="container_16">
+    	<div class="grid_5">
+			<div class="controls">
+				<ul>
+					<li><a href="#tab-1">Local Fonts
+						</a></li>
+					<li><a href="#tab-2">Server Fonts
+						</a></li>
+					<li><a href="#tab-3">Tab Name 03
+						</a></li>
+				</ul>
+				
+				<div id="tab-1" class="local-fonts">
+					<form id="local-font-form">
+						<p>
+							Pick a font from your computer to map it.
+						</p>
+						<fieldset>
+							<input type="file" id="submitted-font" class="local-font-file" />
+						</fieldset>
+						
+					</form>
+					<img id="wawa" src="" />
 					
-					<?php endif;?>	
-				<?php endforeach;?> 
-			</tr>
-		</table>
+				</div>
+				<div id="tab-2">
+					<?php if(count($font_folders) > 0):?>
+		    	<h1><?php echo $folder_name; ?></h1>
+		    	<p>(<em><?php echo $folder_name; ?></em>)</p>
+		    	
+		    	<div>
+		    	<h2>Fonts Available</h2>
+		    	<ul>
+				<?php foreach($font_folders as $k => $font):?>
+					<li><a href="?font_folder=<?php echo $font;?>"><?php echo $font;?></a></li>
+				<?php endforeach; ?>
+				<?php else:?>
+					<li>No font folders found</li>
+				</ul>	
+				<?php endif; ?>
+				</div>
+				<div>
+				  <p>A folder called 'fonts' should be in the same directory as this file.<br />
+				  	Each font should have it's own folder within that.<br />
+				  	.ttf, .woff, .eot and .svg are all supported.
+				  	</p>
+				  	<p>Click on the font folder name on the left to change the character map to the font in that folder.</p>
+				</div>
+				</div>
+				<div id="tab-3"></div>
+				
+			</div>
+		</div>
+		<div class="grid_11">
+			<div class="char-map" >
+				<?php foreach($all_chars as $i => $k):?>
+					<div><?php echo $k,'<span>',$k,'</span>';?></div>
+				<?php endforeach;?>
+			</div>
+
+		</div>
+		
     </div>
     <footer>
 
@@ -98,6 +143,7 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script src="/js/libs/jquery-ui-1.8.24.custom.min.js"></script>
 
 
   <!-- scripts concatenated and minified via ant build script-->
@@ -108,10 +154,10 @@
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->
   <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
+    //window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    //Modernizr.load({
+     // load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+    //});
   </script>
 
 

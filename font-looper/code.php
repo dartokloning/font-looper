@@ -1,8 +1,18 @@
 <?php
 	// Create an array containing a range of ASCII elements.
 	// Kudos to Emre Yazici on Stackoverflow - http://stackoverflow.com/users/220726/emre-yazici 
-	$bytes =  range (0 , 255);
-	$all_chars = array_map('chr', $bytes);
+	$bytes =  range (33 , 255);
+	//$all_chars = array_map('chr', $bytes);
+	$all_chars = array();
+	foreach($bytes as $i){
+		$all_chars[] = mb_convert_encoding(pack('n', $i), 'UTF-8', 'UTF-16BE');
+	}
+	
+	foreach($all_chars as $k => $v){
+		if(strlen(trim($v)) < 1){
+		//	unset($all_chars[$k]);
+		}
+	}
 	
 	$column_limit = 12;
 	

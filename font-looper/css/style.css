@@ -219,18 +219,60 @@ h1{
 h2{
 	font-size: 16px;
 	font-weight: normal;
+	margin: 0 0 8px 0;
 }
 
 p{
 	margin: 0 0 0.5em;
 }
 
+.container_16{
+	clear: both;
+}
+
+header > div{
+	display: inline-block;
+	vertical-align: top;
+}
+
 #font-looper{
 	margin: 12px auto;
-	width: 1024px;
+	width: 90%;
+}
+
+#font-looper table{
+	font-size: 16px;
+}
+#font-looper td{
+	border: 1px solid #999;
+	padding: 0.25em;
+	text-align: center;	
+}
+
+.char-map{
+	color: #bbb;
+}
+
+.char-map span{
+	color: #999;
+	display: block;
+	padding: 0.25em;
+	font-size: 2em;
 }
 
 
+.char-map{
+	margin: 0 auto;
+	font-size: 0;
+}
+.char-map div{
+	border: 1px solid #999;
+	margin: -1px 0 0 -1px;
+	display:inline-block;
+	min-width:4em;
+	font-size: 14px;
+	padding: 0.25em;
+}
 
 
 
@@ -287,22 +329,3 @@ p{
 
 
 
-/* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
- 
-@media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
-}
