@@ -24,7 +24,7 @@ function handleFiles(){
 	
 	console.log(objectUrl);
 	
-	$("<style>@font-face{ font-family: 'file-font'; src: url('"+ objectUrl +"');} .looped-font{ font-family: 'file-font'; }</style>").appendTo('head');
+	$("<style>@font-face{ font-family: 'file-font'; src: url('"+ objectUrl +"');} .char-map span{ font-family: 'file-font'; }</style>").appendTo('head');
 	
 	window.URL.revokeObjectURL(fileList[0]);
 	console.log(fileList);

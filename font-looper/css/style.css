@@ -254,10 +254,11 @@ header > div{
 }
 
 .char-map span{
-	color: #999;
+	color: #333;
 	display: block;
 	padding: 0.25em;
 	font-size: 2em;
+	text-align: center;
 }
 
 

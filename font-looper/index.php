@@ -42,7 +42,7 @@
 		    font-style: normal;
 		
 		}
-		.looped-font{
+		.char-map span{
 			font-family: 'LoopedFont';
 		}
   </style>
