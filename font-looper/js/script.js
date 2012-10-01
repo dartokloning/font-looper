@@ -20,7 +20,9 @@ inputElement.addEventListener("change",handleFiles,false);
 function handleFiles(){
 	var fileList = this.files;
 	
-	var objectUrl = window.URL.createObjectURL(fileList[0]);
+	var anyWindow = window.URL || window.webkitURL;
+	
+	var objectUrl = anyWindow.createObjectURL(fileList[0]);
 	
 	console.log(objectUrl);
 	
