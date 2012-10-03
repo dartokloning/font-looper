@@ -1,11 +1,13 @@
 <?php
 	// Create an array containing a range of ASCII elements.
 	// Kudos to Emre Yazici on Stackoverflow - http://stackoverflow.com/users/220726/emre-yazici 
-	$bytes =  range (33 , 255);
+	$bytes_a =  range (33 , 126);
+	$bytes_b = range(161, 255);
+	$bytes = array_merge((array)$bytes_a,(array)$bytes_b);
 	//$all_chars = array_map('chr', $bytes);
 	$all_chars = array();
 	foreach($bytes as $i){
-		$all_chars[] = mb_convert_encoding(pack('n', $i), 'UTF-8', 'UTF-16BE');
+		$all_chars[$i] = mb_convert_encoding(pack('n', $i), 'UTF-8', 'UTF-16BE');
 	}
 	
 	foreach($all_chars as $k => $v){
@@ -33,7 +35,7 @@
 	}
 	
 	
-	if(strlen($_GET['font_folder']) > 4){
+	if(isset($_GET['font_folder']) && strlen($_GET['font_folder']) > 4){
 		$active_font = $dir.'/'.$_GET['font_folder'];
 		$folder_name = $_GET['font_folder'];
 	}else{
