@@ -316,6 +316,14 @@ header p{
 	border: 2px dashed yellow;
 }
 
+#web-font-file.correct:after{
+	content: 'y';
+}
+
+#web-font-file.erroneous:after{
+	content: 'n';
+}
+
 footer{
 	clear: both;
 	min-height: 2em;

@@ -89,6 +89,11 @@
 							<label>Select a font file on your computer</label>
 							<input type="file" id="submitted-font" class="local-font-file" />
 						</fieldset>
+						<p class="orp">or</p>
+						<fieldset>
+							<label>Provide the url for a font on a server</label>
+							<input type="text" id="web-font-file" />
+						</fieldset>
 						
 							<p>You can only see a font if your browser supports it.</p>
 							<p>The magic will only happen with .eot, .woff, .ttf and .svg files. I recommend .woff, as it has the best support these days.</p>
