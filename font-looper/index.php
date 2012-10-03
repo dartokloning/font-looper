@@ -13,7 +13,7 @@
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Font Looper</title>
+  <title>Font Looper - because you can't spend all day puzzling over icon fonts</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -61,40 +61,44 @@
 <body>
 
   <div id="font-looper">
-    <header class="container_16">
-		<div class="grid_8">
-			<h1>Font Looper</h1>
-		</div>
-		<div class="grid_8">
-			<h2>by <span>Ca</span>lcium</h2>
+    <header>
+    	<div  class="container_16 clearfix">
+			<div class="grid_8">
+				<h1>Font Looper</h1>
+				<p>because you can't spend all day puzzling over icon fonts</p>
+			</div>
+			<div class="grid_8 by-calcium">
+				<h2>by <span>Ca</span>lcium</h2>
+			</div>
 		</div>
     </header>
     <div id="main" role="main" class="container_16">
-    	<div class="grid_5">
+    	<div class="grid_5 controls-wrapper">
 			<div class="controls">
-				
+				<h2>What is this for?
+				</h2>
+				<p>Font Looper is a simple tool whcih shows you how characters in an icon font map to keyboard characters.</p>
+				<h2>How do I use it?</h2>
+				<p>Just use the form to select a font on your computer, and the character map on the right will change.
+					The font won't be uploaded, all the important things happen client-side. Thanks, File API.
+				</p>
 					<form id="local-font-form">
-						<p>
-							There are several options for choosing a font to map
-						</p>
-						<span class="numbering">1.</span>
+	
+						
 						<fieldset>
 							<label>Select a font file on your computer</label>
 							<input type="file" id="submitted-font" class="local-font-file" />
 						</fieldset>
-						<!--
+						
+							<p>You can only see a font if your browser supports it.</p>
+							<p>The magic will only happen with .eot, .woff, .ttf and .svg files. I recommend .woff, as it has the best support these days.</p>
+						
+						<!-- Next step
 						<span class="numbering">2.</span>
 						<fieldset>
 							<label>Provide the url for a font on a server</label>
 							<input type="text" class="web-font-file" />
 							
-						</fieldset>
-						<span class="numbering">3.</span>
-						<fieldset>
-							<label>Choose one of these hotlinkable fonts</label>
-							<select>
-								
-							</select>
 						</fieldset>
 						-->
 					</form>

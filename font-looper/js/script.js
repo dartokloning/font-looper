@@ -4,16 +4,6 @@
 
 
 
-
-
-
-
-
-
-$(function(){
-	$('.controls').tabs();
-})
-
 var inputElement = document.getElementById("submitted-font");
 inputElement.addEventListener("change",handleFiles,false);
 
