@@ -223,6 +223,18 @@ td { vertical-align: top; }
 
 }
 
+@font-face {
+    font-family: 'ModernPictogramsNormal';
+    src: url('../fonts/modern-pictograms-fontfacekit/modernpics-webfont.eot');
+    src: url('../fonts/modern-pictograms-fontfacekit/modernpics-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/modern-pictograms-fontfacekit/modernpics-webfont.woff') format('woff'),
+         url('../fonts/modern-pictograms-fontfacekit/modernpics-webfont.ttf') format('truetype'),
+         url('../fonts/modern-pictograms-fontfacekit/modernpics-webfont.svg#ModernPictogramsNormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 p{
 	margin: 0 0 0.5em;
 }
@@ -276,9 +288,16 @@ header > div{
 header{
 	background: #333;
 }
+header > div{
+	position: relative;
+}
 header h1,
 header h2{
 	letter-spacing: 0.05em;
+}
+.title{
+	display: inline-block;
+	width: 60%;
 }
 header h1{
 	font-family: 'Minotaur', sans-serif;
@@ -286,6 +305,7 @@ header h1{
 }
 header h2{
 	font-size: 1.5em;
+	font-weight: normal;
 }
 header p{
 	color: #fff;
@@ -294,6 +314,15 @@ header p{
 .by-calcium{
 	text-align: right;
 	color: #ccc;
+	position: absolute;
+	right: 0;
+	bottom: 1em;
+}
+.by-calcium a{
+	color: #ccc;
+}
+.by-calcium a:hover{
+	color: #aaa;
 }
 .by-calcium span{
 	color: #fff;
@@ -316,12 +345,18 @@ header p{
 	border: 2px dashed yellow;
 }
 
-#web-font-file.correct:after{
-	content: 'y';
+#web-font-file.correct + .check{
+	font-family: "ModernPictogramsNormal";
 }
 
-#web-font-file.erroneous:after{
-	content: 'n';
+#web-font-file.correct + .check:before{
+	content: '%';
+	color: #2c2;
+}
+
+#web-font-file.erroneous + .check:before{
+	content: 'X';
+	color: #c22;
 }
 
 footer{

@@ -63,13 +63,14 @@
   <div id="font-looper">
     <header>
     	<div  class="container_16 clearfix">
-			<div class="grid_8">
-				<h1>Font Looper</h1>
-				<p>because you can't spend all day puzzling over icon fonts</p>
-			</div>
-			<div class="grid_8 by-calcium">
-				<h2>by <span>Ca</span>lcium</h2>
-			</div>
+			<div class="grid_16">
+				<div class="title">
+					<h1>Font Looper</h1>
+					<p>because you can't spend all day puzzling over icon fonts</p>
+				</div>
+				<div class="by-calcium">
+					<h2>by <a href="http://www.calcium.ie/"><span>Ca</span>lcium</a></h2>
+				</div>
 		</div>
     </header>
     <div id="main" role="main" class="container_16">
@@ -93,6 +94,7 @@
 						<fieldset>
 							<label>Provide the url for a font on a server</label>
 							<input type="text" id="web-font-file" />
+							<span class="check"></span>
 						</fieldset>
 						
 							<p>You can only see a font if your browser supports it.</p>
