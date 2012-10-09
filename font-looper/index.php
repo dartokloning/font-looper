@@ -99,7 +99,14 @@
 						
 							<p>You can only see a font if your browser supports it.</p>
 							<p>The magic will only happen with .eot, .woff, .ttf and .svg files. I recommend .woff, as it has the best support these days.</p>
-						
+						<div class="advanced">
+							<div class="title">
+								
+							</div>
+							<fieldset>
+								<strong>Custom character range</strong>
+							</fieldset>
+						</div>
 						<!-- Next step
 						<span class="numbering">2.</span>
 						<fieldset>
@@ -146,7 +153,7 @@
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->
   <script>
-    //window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    //window._gaq = [['_setAccount','UA-XXXXX-X'],['_trackPageview'],['_trackPageLoadTime']];
     //Modernizr.load({
      // load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     //});

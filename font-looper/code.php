@@ -16,6 +16,8 @@
 		}
 	}
 	
+	// Start of legacy code, from when the tool was just for me, still used to set up the first font on the page
+	
 	$column_limit = 12;
 	
 	$dir = "fonts";
@@ -52,5 +54,7 @@
 			$font_files[$ext[1]] = $v;
 		}
 	}
+	
+	// End of legacy code
 
 ?>
