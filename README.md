@@ -11,3 +11,6 @@ You specify a font file on your computer or on the web and it maps it out for yo
 
 ## Is this finished?
 No, it needs to do a lot more before I could call it complete
+
+## Can I see a live version?
+No bother, just go to [font-looper.calcium.ie](http://font-looper.calcium.ie/)
