@@ -22,6 +22,10 @@ function handleFiles(){
 		$('.char-map').load('custom-range.php?range_start=61440&range_end=61700');
 		$('input.range-start').val('61440');
 		$('input.range-end').val('61700');	
+	}else{
+		$('.char-map').load('custom-range.php?range_start=33&range_end=255');
+		$('input.range-start').val('33');
+		$('input.range-end').val('255');	
 	}
 	
 	//console.log(objectUrl);
@@ -49,6 +53,10 @@ $('#web-font-file').keyup(function(){
 		$('.char-map').load('custom-range.php?range_start=61440&range_end=61700');
 		$('input.range-start').val('61440');
 		$('input.range-end').val('61700');	
+	}else{
+		$('.char-map').load('custom-range.php?range_start=33&range_end=255');
+		$('input.range-start').val('33');
+		$('input.range-end').val('255');	
 	}
 	
 	var lastThreeChars = fontUrl.slice(-3);
