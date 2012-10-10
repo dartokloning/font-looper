@@ -359,6 +359,10 @@ header p{
 	color: #c22;
 }
 
+input.num-range{
+	width: 3em;
+}
+
 footer{
 	clear: both;
 	min-height: 2em;

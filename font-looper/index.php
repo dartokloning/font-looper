@@ -104,7 +104,12 @@
 								
 							</div>
 							<fieldset>
-								<strong>Custom character range</strong>
+								<strong>Custom character range</strong><br />
+								<label for="">From</label><input type="" class="num-range range-start" />
+								<label for="">To</label><input type="" class="num-range range-end" />
+								<p>Enter a decimal number (not hexadecimal) for the first and last character in the range you want to see on the right.<br />
+									<strong>This is currently limited to 500 characters from the first value.</strong>
+								</p>
 							</fieldset>
 						</div>
 						<!-- Next step
@@ -124,7 +129,7 @@
 		<div class="grid_11">
 			<div class="char-map" >
 				<?php foreach($all_chars as $i => $k):?>
-					<div><?php echo $k,'<span data-char-number=\'',$i,'\'>',$k,'</span>';?></div>
+					<div><?php echo $k,'<span data-unicode-hex=\'',str_pad(dechex($i),4,0,STR_PAD_LEFT),'\' data-unicode-dec=',$i,'>',$k,'</span>';?></div>
 				<?php endforeach;?>
 			</div>
 

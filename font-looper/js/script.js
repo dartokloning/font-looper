@@ -15,6 +15,14 @@ function handleFiles(){
 	var anyWindow = window.URL || window.webkitURL;
 	
 	var objectUrl = anyWindow.createObjectURL(fileList[0]);
+	var currentFontName = fileList[0].name;
+	console.log(fileList[0].name + "sausages");
+	
+	if(currentFontName.indexOf("fontawesome") >= 0){
+		$('.char-map').load('custom-range.php?range_start=61440&range_end=61700');
+		$('input.range-start').val('61440');
+		$('input.range-end').val('61700');	
+	}
 	
 	//console.log(objectUrl);
 	
@@ -35,6 +43,12 @@ $('#web-font-file').keyup(function(){
 	if(fontUrl.slice(0,7) !== "http://"){
 		fontUrl = "http://" + fontUrl;
 		//console.log(fontUrl.slice(0,7));
+	}
+	
+	if(fontUrl.indexOf("fontawesome") >= 0){
+		$('.char-map').load('custom-range.php?range_start=61440&range_end=61700');
+		$('input.range-start').val('61440');
+		$('input.range-end').val('61700');	
 	}
 	
 	var lastThreeChars = fontUrl.slice(-3);
@@ -65,6 +79,29 @@ $('#web-font-file').keyup(function(){
 		$('#web-font-file').addClass('erroneous');
 	}
 	
+	
+});
+
+var characterRange = {};
+
+function rangeMod(){
+	if($('input.range-start').val() !== characterRange.start || $('input.range-end').val() !== characterRange.end){
+		characterRange.start = $('input.range-start').val();
+		characterRange.end = $('input.range-end').val();	
+		if((characterRange.end - characterRange.start) > 0){
+			$('.char-map').load('custom-range.php?range_start='+ characterRange.start +'&range_end='+characterRange.end);
+		}
+	}
+
+}
+
+$('input.num-range').keyup(function(){
+	if(($('input.range-end').val() - $('input.range-start').val()) < 501){
+		rangeMod();
+	}else{
+		$('input.range-end').val(parseInt($('input.range-start').val()) + 500);
+		rangeMod();
+	}
 	
 });
 
