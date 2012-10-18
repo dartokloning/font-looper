@@ -19,8 +19,8 @@
 	
 	if(isset($_GET['pua_skim']) && $_GET['pua_skim'] == 'true'){
 		$ps_skim = array();
-		for($i=0;$i<32;$i++){
-			$shot = $i + 61440 + ($i * 200);
+		for($i=0;$i<64;$i++){
+			$shot = $i + 57344 + ($i * 100);
 			$ps_skim[$i * 3] = $shot;
 			$ps_skim[$i * 3 + 1] = $shot + 1;
 			$ps_skim[$i * 3 + 2] = $shot + 3;

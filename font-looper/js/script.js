@@ -123,7 +123,7 @@ $('.skim-private').click(function(){
 $('.char-map').on("click","div.pua",function(){
 	var focusedCode = parseInt($(this).children('span').data('decimal'));
 	console.log(focusedCode);
-	$('.char-map').load('custom-range.php?range_start='+ (focusedCode - 10) +'&range_end='+ (focusedCode + 489),
+	$('.char-map').load('custom-range.php?range_start='+ (focusedCode - 50) +'&range_end='+ (focusedCode + 449),
 	function(){
 		$(".char-map").on("change","#pua-code-"+focusedCode,function(){
 			$('html, body').animate({

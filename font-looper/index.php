@@ -96,13 +96,19 @@
 							<input type="text" id="web-font-file" />
 							<span class="check"></span>
 						</fieldset>
-						
-							<p>You can only see a font if your browser supports it.</p>
-							<p>The magic will only happen with .eot, .woff, .ttf and .svg files. I recommend .woff, as it has the best support these days.</p>
+						<p>The magic will only happen with .eot, .woff, .ttf and .svg files. I recommend .woff, as it has the best support these days.</p>
 						<div class="advanced">
 							<div class="title">
 								
 							</div>
+							
+							<fieldset>
+								<p><strong>Can't see your icons? Use this button.</strong></p>
+								<p><button class="skim-private">Skim Private Use Area</button></p>
+								<p>Many icon fonts are mapped to the private use area of unicode, which means they aren't mapped to standardised characters.<br />
+									Click the button above and Font Looper will skim the first private use area. If you see an icon from your font on the right, click that icon, and the surroundign range will be mapped.
+								</p>
+							</fieldset>
 							<fieldset>
 								<strong>Custom character range</strong><br />
 								<label for="">From</label><input type="" class="num-range range-start" />
@@ -110,9 +116,6 @@
 								<p>Enter a decimal number (not hexadecimal) for the first and last character in the range you want to see on the right.<br />
 									<strong>This is currently limited to 500 characters from the first value.</strong>
 								</p>
-							</fieldset>
-							<fieldset>
-								<button class="skim-private">Skim PUA</button>
 							</fieldset>
 						</div>
 						<!-- Next step
