@@ -18,7 +18,7 @@ function handleFiles(){
 	var currentFontName = fileList[0].name;
 	console.log(fileList[0].name + "sausages");
 	
-	if(currentFontName.indexOf("fontawesome") >= 0){
+	if(currentFontName.indexOf("zamafontawesome") >= 0){
 		$('.char-map').load('custom-range.php?range_start=61440&range_end=61700');
 		$('input.range-start').val('61440');
 		$('input.range-end').val('61700');	
@@ -93,7 +93,7 @@ $('#web-font-file').keyup(function(){
 var characterRange = {};
 
 function rangeMod(){
-	if($('input.range-start').val() !== characterRange.start || $('input.range-end').val() !== characterRange.end){
+	if($('input.range-start').val() != characterRange.start || $('input.range-end').val() != characterRange.end){
 		characterRange.start = $('input.range-start').val();
 		characterRange.end = $('input.range-end').val();	
 		if((characterRange.end - characterRange.start) > 0){
@@ -102,9 +102,8 @@ function rangeMod(){
 	}
 
 }
-
-$('input.num-range').keyup(function(){
-	if(($('input.range-end').val() - $('input.range-start').val()) < 501){
+$('form').on("change keyup","input.num-range",function(){
+	if((parseInt($('input.range-end').val()) - parseInt($('input.range-start').val())) < 501){
 		rangeMod();
 	}else{
 		$('input.range-end').val(parseInt($('input.range-start').val()) + 500);
@@ -112,6 +111,30 @@ $('input.num-range').keyup(function(){
 	}
 	
 });
+
+$('.skim-private').click(function(){
+	$('.char-map').load('custom-range.php?pua_skim=true');
+	
+	
+	
+	return false;
+});
+
+$('.char-map').on("click","div.pua",function(){
+	var focusedCode = parseInt($(this).children('span').data('decimal'));
+	console.log(focusedCode);
+	$('.char-map').load('custom-range.php?range_start='+ (focusedCode - 10) +'&range_end='+ (focusedCode + 489),
+	function(){
+		$(".char-map").on("change","#pua-code-"+focusedCode,function(){
+			$('html, body').animate({
+		         scrollTop: $("#pua-code-"+focusedCode).offset().top
+		     }, 2000);
+		})
+			
+	});
+
+})
+
 
 
 

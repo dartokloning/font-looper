@@ -285,6 +285,9 @@ header > div{
 	min-width:4em;
 	padding: 0.25em;
 }
+.char-map label{
+	font-family: monospace;
+}
 header{
 	background: #333;
 }

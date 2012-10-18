@@ -111,6 +111,9 @@
 									<strong>This is currently limited to 500 characters from the first value.</strong>
 								</p>
 							</fieldset>
+							<fieldset>
+								<button class="skim-private">Skim PUA</button>
+							</fieldset>
 						</div>
 						<!-- Next step
 						<span class="numbering">2.</span>
@@ -145,8 +148,8 @@
   <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.8.2.min.js"><\/script>')</script>
   <script src="/js/libs/jquery-ui-1.8.24.custom.min.js"></script>
 
 
